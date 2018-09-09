@@ -63,38 +63,24 @@ Constists of 3 files :
 
 
 Views
-Views were used only for question 3 to break the problem down to understand it easier.
+Created 2 views:
 
 
-error view
 
-CREATE VIEW error_view AS
+
+CREATE VIEW error AS
     SELECT date(time), count(status)
     FROM log
     WHERE status != '200 OK'
     GROUP BY date(time)
     ORDER BY count(status);
-all view
 
-CREATE VIEW all_view AS
+
+CREATE VIEW full AS
     SELECT date(time), count(status)
     FROM log
     GROUP BY date(time)
     ORDER BY count(status);
-query_3
-
-CREATE VIEW query_3 AS
-    SELECT errors.date, e.count AS errors, errors.count AS all
-    FROM all_view errors
-    LEFT JOIN error_view e
-    ON errors.date=e.date;
-percent_error
-
-CREATE VIEW percent_error AS
-    SELECT errors.date, CAST (errors.errors as float) / errors.all * 100 AS percent
-    FROM query_3 errors
-    WHERE CAST (errors.errors as FLOAT) / errors.all * 100 > 1;
-
 
 
 
@@ -116,7 +102,7 @@ Author Name:	Anonymous Contributor ||	article:	170098
 Author Name:	Markoff Chaney ||	article:	84557 
 
 Max error reported in percentage
-Day:	Jul 17, 2016 ||	Error Percent: 2.263
+?
 
 Output in Text:
 1. The most popular three articles of all time?
@@ -128,7 +114,5 @@ Output in Text:
         Rudolf von Treppenwitz: 423457 views
         Anonymous Contributor: 170098 views
         Markoff Chaney: 84557 views
-3. On which days did more than 1% of requests lead to errors
-        July 29, 2016 — 2.5% errors
 
 
