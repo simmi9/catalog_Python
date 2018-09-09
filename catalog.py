@@ -20,7 +20,12 @@ HTML_WRAP = '''\
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <style>
+  <link rel="stylesheet" src="C:\Users\ashis\udacity-git-webdev\fullstack-nanodegree-vm-master\fullstack-nanodegree-vm-master\vagrant\catalog\owl-carousel/css/owl.carousel.css">
+  <link rel="stylesheet" src="C:\Users\ashis\udacity-git-webdev\fullstack-nanodegree-vm-master\fullstack-nanodegree-vm-master\vagrant\catalog\owl-carousel/css/owl.theme.css">
+  <script type="text/javascript" src="C:\Users\ashis\udacity-git-webdev\fullstack-nanodegree-vm-master\fullstack-nanodegree-vm-master\vagrant\catalog\owl-carousel\js\owl.carousel.js"></script>
+ 
+ 
+   <style>
       h1, form { text-align: center; }
       textarea { width: 400px; height: 100px; }
       div.post { border: 1px solid #999;
@@ -31,81 +36,22 @@ HTML_WRAP = '''\
     </style>
   </head>
   <body>
-   <header class="header"> Header</header>
-   <div class"sidebar"> 
-    <div class"sidebar-wrapper"> </div>
-   </div>
-   <!--Main Container>
-  <main class="main-container">
-   <section class="main-highlight">
-    <div class="highlight-carousel slider-carousel">
-     <div class="owl-carousel owl-loaded owl-drag" id="postCarousel">
-      <div class="owl-stage-outer">
-       <div class="owl-stage" style="transform:
-       translate3d(-1913px, 0px, 0px); transition:all 0s ease 0s; width: 7655px;">
-        <div class="owl-tem cloned" style="width:936.8px; margin-right: 20px;"> </div>
-        <div class="owl-tem cloned" style="width:936.8px; margin-right: 20px;"> </div>
-        <div class="owl-tem active" style="width:936.8px; margin-right: 20px;"> </div>
-         <div class="item">
-          <article class="post-box" style="background-image:url();">
-           <div class="post-overlay"> </div>
-           <a href="#" class="post-overlayLink"></a>
-          </article>
-         </div>
-        </div>
-        <div class="owl-item" style="width: 936.8px; margin-right: 20px;"></div>
-         <div class="item"></div>
-        </div>
-        <div class="owl-item" style="width: 936.8px; margin-right: 20px;"></div>
-         <div class="item"></div>
-        </div>
-        <div class="owl-item" style="width: 936.8px; margin-right: 20px;"></div>
-         <div class="item"></div>
-        </div>
-        <div class="owl-item cloned" style="width: 936.8px; margin-right: 20px;"></div>
-         <div class="item"></div>
-        </div>
-        <div class="owl-item cloned" style="width: 936.8px; margin-right: 20px;"></div>
-         <div class="item"></div>
-         ::after
-        </div>
-       </div>
-       <div class="owl-nav"></div>
-        <button type="button" role="presentation" class="owl-prev">
-        </button>
-        <button type="button" role="presentation" class="owl-next">
-        </button> 
-        </div>
-        <div class="owl-dots">
-         <button role="button" class="owl-dot active">></button>
-         <button role="button" class="owl-dot"></button>
-         <button role="button" class="owl-dot"></button>
-         <button role="button" class="owl-dot"></button>
-        </div>
-       </div>
-      </div>
-     </section>
-     <section class="main-content"> </selection>
-      <div class="main-content-wrapper"></div>
-     </section>
-    </main>
-    <!-- register -->
-    <div class="m-modal-box" id="registerModal"></div>
-     <div class="m-modal-overlay"></div>
-     <div class="m-modal-content small"> </div>
+    <div "owl-carousel owl-theme">
+    <div class="item"><h4>1</h4></div>
+    <div class="item"><h4>2</h4></div>
+    <div class="item"><h4>3</h4></div>
+    <div class="item"><h4>4</h4></div>
+    <div class="item"><h4>5</h4></div>
+    <div class="item"><h4>6</h4></div>
+    <div class="item"><h4>7</h4></div>
+    <div class="item"><h4>8</h4></div>
+    <div class="item"><h4>9</h4></div>
+    <div class="item"><h4>10</h4></div>
+    <div class="item"><h4>11</h4></div>
+    <div class="item"><h4>12</h4></div>
+     <!--<div style="width: 936.8px; margin-right: 20px; ><img src="harrypotter.jpeg" alt="harry"> article1 img </div>
+      <div style="width: 936.8px; margin-right: 20px; ><img src="psiloveu.jpg" alt="ps"> article2 img </div>  -->   
     </div>
-    
-    <div class="m-modal-box" id="loginModal"></div>
-     <div class="m-modal-overlay"></div>
-     <div class="m-modal-content small"> </div>
-    </div>
-
-    <div class="m-modal-box" id="newsletterModal"></div>
-     <div class="m-modal-overlay"></div>
-     <div class="m-modal-content small"> </div>
-    </div>
-    <div class="overlay"> </div>
-  
 
 <div class="container-fluid">
 
@@ -119,13 +65,30 @@ HTML_WRAP = '''\
     <!-- post content will go here -->
 %s
 </div>
+ <script type="text/javascript">
+  $(document).ready(function() {
+ $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+});
 
- <script src="plugins/zebra-tooltip/zebra_tooltips.min.js"></script>
-    <script src="plugins/owl-carousel/owl.carousel.min.js"></script>
-    <script type="text/javascript"></script>
+});
+    </script>
   </body>
 </html>
-</iframe>
+
 '''
 # HTML template for an individual comment
 POST = '''\
