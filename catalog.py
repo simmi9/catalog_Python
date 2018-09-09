@@ -3,7 +3,7 @@
 
 from flask import Flask, request, redirect, url_for
 
-from catalogdb import get_posts1,get_posts2,get_posts3
+from catalogdb import get_posts1,get_posts2
 
 app = Flask(__name__)
 
@@ -1153,12 +1153,12 @@ def main():
   posts=""
   popular_article_posts1 = get_posts1()
   popular_article_posts2 = get_posts2()
-  popular_article_posts3 = get_posts3()
+  
   posts1 = "<br/>".join('\n Title:\t %s \t\t||\t\t views:\t %s \t  \n' % (text) for text in popular_article_posts1)
   posts2=  "<br/>".join('\n Author Name:\t %s \t\t||\t\t article:\t  %s \t  \n' % (text) for text in popular_article_posts2)
-  posts3=  "<br/>".join('\n Day:\t %s \t\t||\t\t Error Percent:  %s \t  \n' % (text) for text in popular_article_posts3)
+  
   posts+="<ul>"
-  posts="<li> Most Popular Articles</li>"+ posts1 + "<br/> <li> Most Popular Authors of Popular Articles</li>" + posts2 +"<br/> <li> max error reported in percentage</li> "+ posts3+"</ul>"
+  posts="<li> Most Popular Articles</li>"+ posts1 + "<br/> <li> Most Popular Authors of Popular Articles</li>" + posts2 +"<br/> <li> max error reported in percentage</li> "+ "?"+"</ul>"
   html = HTML_WRAP % posts
   return html
 
