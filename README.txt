@@ -117,7 +117,11 @@ Output in Text:
         Markoff Chaney: 84557 views
 
 references: 
-https://github.com/mulligan121/log-analysis-udacity
+https://www.python.org
+https://docs.oracle.com/javadb/10.8.3.0/ref/rrefsqlj29840.html
 http://www.landmarkmlp.com/js-plugin/owl.carousel/demos/images.html
 https://www.w3schools.com/bootstrap4/default.asp
+https://github.com/mulligan121/log-analysis-udacity
+
+
 https://stackoverflow.com
