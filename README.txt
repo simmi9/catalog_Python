@@ -22,8 +22,11 @@ Make sure vagrant is running by using the vagrant up command
 Then log into vagrant using vagrant ssh
 Load the data from the database using the command psql -d news -f newsdata.sql
 Create views for the database as required for easier extraction
-Run python catalog.py
+Run python catalog.py will return the output.
 Output will be displayed in bash as well as on your local host http://localhost:8000/
+
+
+Requirements:
 
 This database includes three tables:
 
@@ -52,6 +55,11 @@ Anonymous Contributor — 1023 views
 Example:
 
 July 29, 2016 — 2.5% errors
+
+Implementation:
+Constists of 3 files :
+1) Catalogdb.py : Establishes connection with database news, executes the queries and returns the desired output in a dictionary.
+2) Catalog.py: Acts as a web server, establishes connection to database through Catalogdb.py, builds HTML document for returning the output whenever Client/Browser requests.
 
 
 Views
@@ -86,4 +94,41 @@ CREATE VIEW percent_error AS
     SELECT errors.date, CAST (errors.errors as float) / errors.all * 100 AS percent
     FROM query_3 errors
     WHERE CAST (errors.errors as FLOAT) / errors.all * 100 > 1;
+
+
+
+
+
+
+Output in HTML:
+
+Article Catalog
+
+Most Popular Articles
+Title:	Candidate is jerk, alleges rival ||	views:	338647 
+Title:	Bears love berries, alleges bear ||	views:	253801 
+Title:	Bad things gone, say good people ||	views:	170098 
+
+Most Popular Authors of Popular Articles
+Author Name:	Ursula La Multa ||	article:	507594 
+Author Name:	Rudolf von Treppenwitz ||	article:	423457 
+Author Name:	Anonymous Contributor ||	article:	170098 
+Author Name:	Markoff Chaney ||	article:	84557 
+
+Max error reported in percentage
+Day:	Jul 17, 2016 ||	Error Percent: 2.263
+
+Output in Text:
+1. The most popular three articles of all time?
+        Candidate is jerk, alleges rival: 338647 views
+        Bears love berries, alleges bear: 253801 views
+        Bad things gone, say good people: 170098 views
+2. Who are the most popular article authors of all time?
+        Ursula La Multa: 507594 views
+        Rudolf von Treppenwitz: 423457 views
+        Anonymous Contributor: 170098 views
+        Markoff Chaney: 84557 views
+3. On which days did more than 1% of requests lead to errors
+        July 29, 2016 — 2.5% errors
+
 
