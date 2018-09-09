@@ -59,19 +59,49 @@ q3_v4 = ("""CREATE VIEW percent_error AS
     SELECT errors.date, CAST (errors.errors as float) / errors.all * 100 AS percent
     FROM query_3 errors
     WHERE CAST (errors.errors as FLOAT) / errors.all * 100 > 1; """)
+# Get query results from databse and return them
+def get_results(query):
+    db = psycopg2.connect(database=DBNAME)
+    c = db.cursor()
+    c.execute(q3_v1)
+    c.execute(q3_v2)
+    c.execute(q3_v3)
+    c.execute(q3_v4)
+    c.execute(query)
+    results = c.fetchall()
+    db.close()
+    return results
+
+# Print results method
+def print_query_results(query_results):
+    print (query_results['title'])
+    for result in query_results['results']:
+        print ('\t' + str(result[0]) + ': ' +
+               str(result[1]) +
+               query_results['ending'])
+
+# Store query results
+q1_results['results'] = get_results(q1)
+q2_results['results'] = get_results(q2)
+#execute query3 views
+
+q3_results['results'] = get_results(q3)
+# Print query results
+
+print_query_results(q1_results)
+print_query_results(q2_results)
+#defining get posts 
+def get_posts1():
+    return q1_results['results']
+    #return q1_results.items()
+def get_posts2():
+    return q2_results['results']
+
+def get_posts3():
+    return q3_results['results']
 
 
 
 
-
-POSTS = [("This is the first post.", datetime.datetime.now())]
-
-def get_posts():
-  """Return all posts from the 'database', most recent first."""
-  return reversed(POSTS)
-
-def add_post(content):
-  """Add a post to the 'database' with the current timestamp."""
-  POSTS.append((content, datetime.datetime.now()))
 
 
