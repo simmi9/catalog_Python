@@ -36,33 +36,21 @@ HTML_WRAP = '''\
     </style>
   </head>
   <body>
-    <div "owl-carousel owl-theme">
-    <div class="item"><h4>1</h4></div>
-    <div class="item"><h4>2</h4></div>
-    <div class="item"><h4>3</h4></div>
-    <div class="item"><h4>4</h4></div>
-    <div class="item"><h4>5</h4></div>
-    <div class="item"><h4>6</h4></div>
-    <div class="item"><h4>7</h4></div>
-    <div class="item"><h4>8</h4></div>
-    <div class="item"><h4>9</h4></div>
-    <div class="item"><h4>10</h4></div>
-    <div class="item"><h4>11</h4></div>
-    <div class="item"><h4>12</h4></div>
-     <!--<div style="width: 936.8px; margin-right: 20px; ><img src="harrypotter.jpeg" alt="harry"> article1 img </div>
-      <div style="width: 936.8px; margin-right: 20px; ><img src="psiloveu.jpg" alt="ps"> article2 img </div>  -->   
-    </div>
+   <div id="owl-demo">
+  <div class="item"><img src="OwlCarousel2-2.3.4\OwlCarousel2-2.3.4\dist\assets\a9.jpg" alt="Owl Image"></div>
+  <div class="item"><img src="OwlCarousel2-2.3.4\OwlCarousel2-2.3.4\dist\assets\a10.jpg" alt="Owl Image"></div>
+  <div class="item"><img src="OwlCarousel2-2.3.4\OwlCarousel2-2.3.4\dist\assets\a11.jpg" alt="Owl Image"></div>
+  <div class="item"><img src="OwlCarousel2-2.3.4\OwlCarousel2-2.3.4\dist\assets\a5.jpg" alt="Owl Image"></div>
+  <div class="item"><img src="OwlCarousel2-2.3.4\OwlCarousel2-2.3.4\dist\assets\a6.jpg" alt="Owl Image"></div>
+  <div class="item"><img src="OwlCarousel2-2.3.4\OwlCarousel2-2.3.4\dist\assets\a7.jpg" alt="Owl Image"></div>
+  <div class="item"><img src="OwlCarousel2-2.3.4\OwlCarousel2-2.3.4\dist\assets\a8.jpg" alt="Owl Image"></div>
+  <div class="item"><img src="OwlCarousel2-2.3.4\OwlCarousel2-2.3.4\dist\assets\a9.jpg" alt="Owl Image"></div>
+<!--</div>-->
+</div>
+
 
 <div class="container-fluid">
 
-    <h1>DB Forum</h1>
-     <div class="container"
-    <form method=post>
-      <div><textarea id="content" name="content"></textarea></div>
-      <div><button id="go" type="submit">Post message</button></div>
-    </form>
-    </div>
-    <!-- post content will go here -->
 %s
 </div>
  <script type="text/javascript">
