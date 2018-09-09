@@ -60,7 +60,8 @@ Implementation:
 Constists of 3 files :
 1) Catalogdb.py : Establishes connection with database news, executes the queries and returns the desired output in a dictionary.
 2) Catalog.py: Acts as a web server, establishes connection to database through Catalogdb.py, builds HTML document for returning the output whenever Client/Browser requests.
-
+3) Catalog7.html: Version1 Html file of Project, which is not yet connected to any database and is purely a front end made with the help of Owl-Carousel Magazine/Newspaper theme.
+         
 
 Views
 Created 2 views:
@@ -115,4 +116,8 @@ Output in Text:
         Anonymous Contributor: 170098 views
         Markoff Chaney: 84557 views
 
-
+references: 
+https://github.com/mulligan121/log-analysis-udacity
+http://www.landmarkmlp.com/js-plugin/owl.carousel/demos/images.html
+https://www.w3schools.com/bootstrap4/default.asp
+https://stackoverflow.com
