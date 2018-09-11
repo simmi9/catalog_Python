@@ -24,7 +24,7 @@ Load the data from the database using the command psql -d news -f newsdata.sql
 Create views for the database as required for easier extraction
 Run python catalog.py will return the output.
 Output will be displayed in bash as well as on your local host http://localhost:8000/
-
+The files have been style according to pep8 style guidelines.
 
 Requirements:
 
@@ -83,7 +83,17 @@ CREATE VIEW full AS
     GROUP BY date(time)
     ORDER BY count(status);
 
+q3_v3 = ("""CREATE VIEW query_3 AS
+    SELECT errors.date, e.count AS errors, errors.count AS all
+    FROM full_view errors
+    LEFT JOIN error e
+    ON errors.date=e.date; """)
 
+q3_v4 = ("""CREATE VIEW percent_error AS
+    SELECT errors.date, CAST (errors.errors as float) /
+    errors.all * 100 AS percent
+    FROM query_3 errors
+    WHERE CAST (errors.errors as FLOAT) / errors.all * 100 > 1; """)
 
 
 
@@ -103,7 +113,7 @@ Author Name:	Anonymous Contributor ||	article:	170098
 Author Name:	Markoff Chaney ||	article:	84557 
 
 Max error reported in percentage
-?
+Days:	Jul 17, 2016 ||	percent:	2.263
 
 Output in Text:
 1. The most popular three articles of all time?
@@ -115,6 +125,9 @@ Output in Text:
         Rudolf von Treppenwitz: 423457 views
         Anonymous Contributor: 170098 views
         Markoff Chaney: 84557 views
+3. On which days did more than 1% of requests lead to errors?
+        Jul 17, 2016: 2.263
+
 
 references: 
 https://www.python.org
